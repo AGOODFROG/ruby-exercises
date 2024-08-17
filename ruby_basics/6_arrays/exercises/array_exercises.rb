@@ -50,28 +50,43 @@ end
 
 def array_difference(original, comparison)
   # return an array of elements from the original array that are not in the comparison array
-  original.each{
+  comparison.each{
     |i|
-    puts i
+    original.delete(i)
   }
+  original
 end
 
 def empty_array?(array)
   # return true if the array is empty
+  out = false
+  if array.length == 0 
+    out = true
+  end
+  out
 end
 
 def reverse(array)
   # return the reverse of the array
+  out = []
+  array.each{
+    |element| 
+    out.unshift(element)
+  }
+  out
 end
 
 def array_length(array)
   # return the length of the array
+  array.length
 end
 
 def include?(array, value)
   # return true if the array includes the value
+   array.include?(value)
 end
 
 def join(array, separator)
   # return the result of joining the array with the separator
+  array.join(separator)
 end
